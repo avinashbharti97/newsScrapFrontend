@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import News from './components/news';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    news: [],
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/news')
+    .then(res => res.json())
+      .then((data) => {
+      this.setState({ news: data })
+    })
+    .catch(console.log)
+  }
+
+
+  render(){
+    return(
+      <News news = {this.state.news} />
+    );
+  }
 }
-
 export default App;
