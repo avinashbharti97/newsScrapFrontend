@@ -1,15 +1,15 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 const News = ({news})=>{
     return(
       <div>
         <center><h1>corona news</h1></center>
         {news.map((s)=>(
-          <div class="card">
+          <div class="card m-4">
                 <div class="card-body">
                   <h5 class="card-title">{s.title}</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">{s.url}</h6>
                   <p class="card-text">{s.content}</p>
+                  <a href={s.url} target="_blank">see full news here</a>
                 </div>
               </div>
         ))}
