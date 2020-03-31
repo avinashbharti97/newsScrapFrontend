@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import News from './components/news';
+import Nav from './components/nav';
+import Time from './components/updatedTime';
 
 class App extends Component {
   state = {
@@ -7,10 +9,13 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/news')
+    fetch('https://avinashbharti97-newsscrap.glitch.me/getNews')
     .then(res => res.json())
       .then((data) => {
-      this.setState({ news: data })
+        this.setState({
+          loading: false,
+          news: data
+        })
     })
     .catch(console.log)
   }
@@ -18,7 +23,11 @@ class App extends Component {
 
   render(){
     return(
-      <News news = {this.state.news} />
+      <div class="container">
+        <Nav/>
+        <Time/>
+        <News news = {this.state.news} />
+    </div>
     );
   }
 }
