@@ -9,9 +9,10 @@ const Nav = ()=>{
           <div class="col">
             <img src={logo} className="App-logo" alt="logo" />
           </div>
-          <div class="col">
+          <div class="col text-right font-weight-bold">
             <a href="https://github.com/avinashbharti97/newsScrap">
-              <img src={github} className="github-logo float-right" alt="github-logo" />
+              <p>/github</p>
+              {  /*<img src={github} className="github-logo float-right" alt="github-logo" />*/}
             </a>
           </div>
         </div>

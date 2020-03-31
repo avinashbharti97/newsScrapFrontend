@@ -7,6 +7,7 @@
   pointer-events: none;
 }
 
+
 .github-logo {
   height: 5vmin;
   pointer-events: none;
@@ -14,6 +15,15 @@
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
+  }
+
+  .loader-icon1{
+    height: 20vmin;
+    pointer-events:none;
+    animation: bounceIn infinite 3s ease-out;
+  }
+  .loader-text1{
+      animation: bounceIn infinite 3s ease-out;
   }
 }
 
@@ -41,9 +51,34 @@
   }
 }
 
+@keyframes bounceIn{
+ 0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  } 
+}
+
 .news-card{
+    a:hover{
+        decoration: none;
+    }
+    a:link{
+        color:white;
+        decoration: none;
+    }
+    a:visited{
+        color:white;
+        decoration: none;
+    }
     background-color: #101357;
-    color: white;
+    color: white ;
     h4{
         color: #fbaf08;
     }
@@ -53,6 +88,25 @@
         border-color: white;
     }
 }
-.update-time{
-    color:white;
+//.update-time{
+    //color:white;
+//}
+.stats-card{
+    background-color: #FEFEFF;
+}
+
+.cnf{
+    color:#900a17;
+}
+.act{
+    color:#111757;
+}
+.rec{
+    color:#11481d;
+}
+.dec{
+    color:#878472;
+}
+.logo-subtext{
+    font-size: xx-small;
 }

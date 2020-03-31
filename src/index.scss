@@ -9,6 +9,19 @@ body {
 
   background-color: #fea49f;
 
+  
+    a:hover{
+        decoration: none;
+    }
+    a:link{
+        color:inherit;
+        decoration: none;
+    }
+    a:visited{
+        color:#212529;
+        decoration: none;
+    }
+
 }
 
 code {
