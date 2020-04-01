@@ -70,11 +70,11 @@
         decoration: none;
     }
     a:link{
-        color:white;
+        color:#a2b7cc;
         decoration: none;
     }
     a:visited{
-        color:white;
+        color:#a2b7cc;
         decoration: none;
     }
     background-color: #101357;
@@ -85,7 +85,7 @@
     .btn-link{
         background-color: transparent;
         border: solid;
-        border-color: white;
+        border-color:#a2b7cc;
     }
 }
 //.update-time{
@@ -109,4 +109,19 @@
 }
 .logo-subtext{
     font-size: xx-small;
+}
+.news-time, .fetch-time{
+    font-size: xx-small;
+}
+.news-time{
+    color:#FCCC61;
+}
+.content{
+    color:#a2b7cc;
+}
+.title{
+    font-weight: bolder;
+}
+.td-stat{
+    font-size:xx-small;
 }
