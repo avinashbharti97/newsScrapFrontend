@@ -26,8 +26,8 @@ class App extends Component {
 
   componentDidMount() {
 
-    //fetch('https://avinashbharti97-newsscrap.glitch.me/getNews')
-    fetch('http://localhost:3000/getNews')
+    fetch('https://avinashbharti97-newsscrap.glitch.me/getNews')
+    //fetch('http://localhost:3000/getNews')
       .then(res => res.json())
       .then((data) => {
         this.setState({
