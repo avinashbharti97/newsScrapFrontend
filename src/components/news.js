@@ -4,10 +4,10 @@ import '../App.scss';
 const News = ({news})=>{
     return(
       <div class = "row">
-          <div class="col-6 update-time mt-5">
+          <div class="col-6 update-time mt-2">
             <h6 class="text-left font-weight-bold">LATEST</h6>
           </div>
-          <div class="col-6 update-time mt-5">
+          <div class="col-6 update-time mt-2">
             <p class="text-right fetch-time">FETCHED AT : {news.newsScrapeTime}</p>
           </div>
           <div class = "col">
