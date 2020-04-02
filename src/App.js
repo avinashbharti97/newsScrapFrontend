@@ -24,27 +24,9 @@ class App extends Component {
     loadingStats:true
   }
 
-  componentDidMount() {
+  async componentDidMount() {
 
-    fetch('https://avinashbharti97-newsscrap.glitch.me/getNews')
-    //fetch('http://localhost:3000/getNews')
-      .then(res => res.json())
-      .then((data) => {
-        this.setState({
-          news: data.news.map(obj=>({
-            title: obj.title,
-            url: obj.url,
-            content: obj.content,
-            source: obj.source,
-            time: obj.time
-          })),
-          newsScrapeTime: data.time, 
-          loadingNews: false,
-        })
-      })
-      .catch(console.log)
-
-    fetch('https://api.covid19india.org/data.json')
+    await fetch('https://api.covid19india.org/data.json')
       .then(res=> res.json()).then((data)=>{
         this.setState({
           stats:{
@@ -58,6 +40,24 @@ class App extends Component {
             tddec: data.key_values[0].deceaseddelta,
           },
           loadingStats:false
+        })
+      })
+      .catch(console.log)
+    await fetch('https://avinashbharti97-newsscrap.glitch.me/getNews')
+    //fetch('http://localhost:3000/getNews')
+      .then(res => res.json())
+      .then((data) => {
+        data.news.sort(()=>Math.random()-0.5);
+        this.setState({
+          news: data.news.map(obj=>({
+            title: obj.title,
+            url: obj.url,
+            content: obj.content,
+            source: obj.source,
+            time: obj.time
+          })),
+          newsScrapeTime: data.time, 
+          loadingNews: false,
         })
       })
       .catch(console.log)
