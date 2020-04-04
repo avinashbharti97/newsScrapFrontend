@@ -17,7 +17,8 @@ const Routes = ({news})=>{
                     </div>
                 }
               </Route> 
-              <Route exact path="/vidNews"><Video/></Route> 
+              <Route path="/vidNews">
+                <Video/></Route> 
             </Switch>
       )
   }
