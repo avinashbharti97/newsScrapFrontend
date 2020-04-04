@@ -3,7 +3,7 @@ import ReactPlayer from 'react-player'
 import '../App.scss';
 import youtube from '../apis/youtube';
 import searchYoutube from 'youtube-api-v3-search';
-const API_KEY = 'AIzaSyBAw5UFwq48Hu189Tz_GGlr5iMTW5l5x_8';
+const API_KEY = '';
 
 
 class Video extends Component{
