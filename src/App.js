@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { BrowserRouter, Switch, Route, NavLink } from "react-router-dom";
 import News from './components/news';
+import Footer from './components/footer'
 import Nav from './components/nav';
 import Navbar from './components/navbar.js';
 import Routes from './components/routes.js';
@@ -8,6 +9,7 @@ import Title from './components/titleLogo.js';
 import Loader from './components/loader';
 import Stats from './components/stats';
 import Routing from './components/routing';
+import Video from './components/video'
 
 class App extends Component {
   state = {
@@ -71,10 +73,10 @@ class App extends Component {
   render(){
     return(
       <div class="container">
-        <Nav/>
-        <Title/>
-        <Stats stats = {this.state.stats}/>
         <BrowserRouter>
+          <Nav/>
+          <Title/>
+          <Stats stats = {this.state.stats} />
           <Navbar />
           <Routes news={this.state}/>
         </BrowserRouter>

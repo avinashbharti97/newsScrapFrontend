@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.scss';
+import Footer from './footer.js'
 
 const News = ({news})=>{
     return(
@@ -8,9 +9,9 @@ const News = ({news})=>{
             <h6 class="text-left font-weight-bold">LATEST</h6>
           </div>
           <div class="col-6 update-time mt-2">
-            <p class="text-right fetch-time">FETCHED AT : {news.newsScrapeTime}</p>
+            <p class="text-right fetch-time">FETCHED : {news.newsScrapeTime}</p>
           </div>
-          <div class = "col">
+          <div class = "col-12">
             {news.news.map((s)=>(
                 <div class="card mb-5 news-card">
                   <div class="card-body">

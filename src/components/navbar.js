@@ -3,9 +3,6 @@ import {  NavLink } from "react-router-dom";
 import '../App.scss';
 import textlogo from '../svg/text.svg'
 import videologo from '../svg/video.svg';
-import News from './news.js';
-import Video from './video.js';
-import Loader from './loader.js';
 
 const Navbar = ()=>{
   return(

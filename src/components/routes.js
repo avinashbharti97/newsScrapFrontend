@@ -4,8 +4,9 @@ import '../App.scss';
 import News from './news.js';
 import Video from './video.js';
 import Loader from './loader.js';
+import Footer from './footer.js'
 
-const Routes = ({news})=>{
+const Routes = ({news })=>{
     return(
             <Switch>
               <Route exact path="/">
@@ -14,11 +15,14 @@ const Routes = ({news})=>{
                     <Loader/>:
                     <div>
                       <News news = {news} />
+                      <Footer/>
                     </div>
                 }
               </Route> 
               <Route path="/vidNews">
-                <Video/></Route> 
+                  <Video/>
+                </Route> 
+              
             </Switch>
       )
   }
