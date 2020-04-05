@@ -41,9 +41,9 @@ class App extends Component {
             rec: data.statewise[0].recovered,
             dec: data.statewise[0].deaths,
             statsUpdatedTime: data.statewise[0].lastupdatedtime,
-            tdcnf: data.key_values[0].confirmeddelta,
-           tdrec: data.key_values[0].recovereddelta,
-            tddec: data.key_values[0].deceaseddelta,
+            tdcnf: data.statewise[0].deltaconfirmed,
+           tdrec: data.statewise[0].deltarecovered,
+            tddec: data.statewise[0].deltadeaths,
           },
           loadingStats:false
         })
