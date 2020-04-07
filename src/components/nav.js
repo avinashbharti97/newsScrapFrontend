@@ -12,7 +12,7 @@ const Nav = ()=>{
             </div>
             </NavLink>
           <div class="col text-right font-weight-bold">
-            <a href="https://github.com/avinashbharti97/newsScrap">
+            <a style = {{textDecoration:'none'}}href="https://github.com/avinashbharti97/newsScrap">
               <p>/github</p>
               {  /*<img src={github} className="github-logo float-right" alt="github-logo" />*/}
             </a>

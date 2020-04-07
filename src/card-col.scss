@@ -1,0 +1,14 @@
+@import "bootstrap";
+
+
+
+.card-columns {
+
+  @include media-breakpoint-only(md) {
+
+    column-count: 2;
+
+  }
+
+
+}

@@ -13,8 +13,15 @@
 }
 .text-logo{
     height:8vmin;
-    width: 100%;
+    width: 90%;
     margin-bottom:40px;
+}
+.arrow{
+    height:8vmin;
+    margin-bottom:20px;
+}
+#arrow{
+    fill:#212529;
 }
 
 
@@ -152,9 +159,8 @@
     text-decoration:none;
 }
 .section-route-active{
-    border-bottom: 3px solid #cc8481;
+    border-bottom: 2px solid #3a3438;
     transition: border-bottom .5s ease-in-out;
-    border-width:thin;
 }
 .credit{
     display: inline;
@@ -163,4 +169,12 @@
 }
 .credit-to{
     color:#1117577a;
+}
+.stats-notification{
+    display: inline;
+    font-size:xx-small;
+}
+.customized .col-sm-6:not(:last-child){
+   flex-grow: 1;
+   max-width:100%;
 }
