@@ -1,20 +1,17 @@
 import React, {Component} from 'react';
-import axios from 'axios'
-import { BrowserRouter, Switch, Route, NavLink } from "react-router-dom";
-import News from './components/news';
-import Footer from './components/footer'
 import Nav from './components/nav';
-import Navbar from './components/navbar.js';
-import Routes from './components/routes.js';
-import Title from './components/titleLogo.js';
-import Loader from './components/loader';
-import Stats from './components/stats';
-import Routing from './components/routing';
-import Video from './components/video'
+import Body from './components/body';
 
 class App extends Component {
   state = {
     news: [],
+    dailyDates:[],
+    TotalConfirmedNumbers:[],
+    TotalRecoveredNumbers:[],
+    TotalDeceasedNumbers:[],
+    DailyConfirmedNumbers:[],
+    DailyRecoveredNumbers:[],
+    DailyDeceasedNumbers:[],
     stats:{
       cnf:0,
       act:0,
@@ -28,13 +25,36 @@ class App extends Component {
     },
     newsScrapeTime:0,
     loadingNews:true,
-    loadingStats:true
+    stateWise:[], 
+    loadingStats:true,
+    
   }
 
   async componentDidMount() {
 
     await fetch('https://api.covid19india.org/data.json')
       .then(res=> res.json()).then((data)=>{
+        data.cases_time_series.forEach(obj=>{
+          this.setState(prevState=>({
+                dailyDates: [...prevState.dailyDates, obj.date.slice(0,6)],
+               TotalConfirmedNumbers:[...prevState.TotalConfirmedNumbers, obj.totalconfirmed],
+                TotalDeceasedNumbers:[...prevState.TotalDeceasedNumbers, obj.totaldeceased],
+                TotalRecoveredNumbers:[...prevState.TotalRecoveredNumbers, obj.totalrecovered],
+                DailyRecoveredNumbers:[...prevState.DailyRecoveredNumbers, obj.dailyrecovered],
+                DailyConfirmedNumbers:[...prevState.DailyConfirmedNumbers, obj.dailyconfirmed],
+                DailyDeceasedNumbers:[...prevState.DailyDeceasedNumbers, obj.dailydeceased],
+          }))
+        });
+        let stateWise = this.state.stateWise;
+        stateWise.push(data.statewise)
+        this.setState(
+          {stateWise:stateWise}     
+        )
+        this.state.stateWise.forEach(obj=>{
+          obj.forEach(s=>{
+            console.log(s.state)
+          })
+        })
         this.setState({
           stats:{
             cnf: data.statewise[0].confirmed,
@@ -99,13 +119,8 @@ class App extends Component {
   render(){
     return(
       <div class="container">
-        <BrowserRouter>
-          <Nav/>
-          <Title/>
-          <Stats stats = {this.state.stats} />
-          <Navbar />
-          <Routes news={this.state}/>
-        </BrowserRouter>
+        <Nav/>
+        <Body state = {this.state}/>
     </div>
     );
   }
