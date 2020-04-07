@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import axios from 'axios'
 import { BrowserRouter, Switch, Route, NavLink } from "react-router-dom";
 import News from './components/news';
 import Footer from './components/footer'
@@ -49,7 +50,32 @@ class App extends Component {
         })
       })
       .catch(console.log)
-    await fetch('https://avinashbharti97-newsscrap.glitch.me/getNews')
+    //await fetch('https://avinashbharti97-newsscrap.glitch.me/getNews')
+    //const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    //const options = {
+      //method: 'GET',
+      //url: 'https://covidnews-45ef.restdb.io/rest/news/5e8be8c75053da750001d448',
+      //headers:{
+        //'Content-Type': 'application/json',
+        //'Accept': 'application/json',
+        //'x-apikey':'58e92897164a893a31a9c6ea6a817a1cfe973',
+        //'Access-Control-Origin': '*',
+        //"Access-Control-Allow-Headers":"Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers",
+        //"Access-Control-Allow-Credentials": "true",
+        //"Access-Control-Allow-Methods": "GET,HEAD,OPTIONS,POST,PUT"
+      //}
+    //}
+    //axios(options)
+    await fetch('https://covidnews-45ef.restdb.io/rest/news/5e8be8c75053da750001d448', {
+      headers:{
+        'Content-Type': 'application/json',
+        'x-apikey': '58e92897164a893a31a9c6ea6a817a1cfe973',
+        'Access-Control-Allow-Origin': '*',
+        "Access-Control-Allow-Headers":"Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Methods": "GET,HEAD,OPTIONS,POST,PUT"
+      }
+    })
     //fetch('http://localhost:3000/getNews')
       .then(res => res.json())
       .then((data) => {
