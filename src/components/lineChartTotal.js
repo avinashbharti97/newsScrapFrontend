@@ -2,12 +2,13 @@ import React from 'react';
 
 import {Line} from 'react-chartjs-2';
 
+const LineChartTotal = ({dailyData})=>{
 const data = {
   //labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
   datasets: [{
       type: 'line',
-      label: 'active',
-      data: [200, 200, 200, 200, 200, 200, 200],
+      label: 'confirmed',
+      data: [...dailyData.TotalConfirmedNumbers],
       fill: false,
       backgroundColor: '#101357',
       borderColor: '#fbaf08',
@@ -16,8 +17,8 @@ const data = {
   },
   {
       type: 'line',
-      label: 'confirmed',
-      data: [100, 300, 200, 50, 40, 90, 100],
+      label: 'recovered',
+      data: [...dailyData.TotalRecoveredNumbers],
       fill: false,
       backgroundColor: '#101357',
       borderColor: '#62A87C',
@@ -26,8 +27,8 @@ const data = {
     },
   {
       type: 'line',
-      label: 'death',
-      data: [10, 700, 200, 50, 40, 90, 100],
+      label: 'deceased',
+      data: [...dailyData.TotalDeceasedNumbers],
       fill: false,
       backgroundColor: '#101357',
       borderColor: '#BF0603',
@@ -47,23 +48,29 @@ const options = {
       fill: false
     }
   },
+  legend:{
+    labels:{
+      fontColor: "white",
+      fornSize: 8,
+      boxWidth: 20
+    }
+  },
   scales: {
     xAxes: [
       {
         ticks: {
             callback: function(tick, index, array) {
-                return (index % 3) ? "" : tick;
+                return (index % 7) ? "" : tick;
             },
             fontColor: "white",
             fontSize: 8,
-            stepSize: 50,
             beginAtZero: true
         },
         display: true,
         gridLines: {
           display: false
         },
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        labels: [...dailyData.dailyDates],
       }
     ],
     yAxes: [
@@ -71,12 +78,12 @@ const options = {
         ticks: {
             fontColor: "white",
             fontSize: 8,
-            stepSize: 50,
+            stepSize: 1000,
             beginAtZero: true
         },
         type: 'linear',
         display: true,
-        position: 'left',
+        position: 'right',
         gridLines: {
           display: false
         },
@@ -89,21 +96,18 @@ const options = {
 };
 
 const plugins = [{
-    afterDraw: (chartInstance, easing) => {
-        const ctx = chartInstance.chart.ctx;
-        ctx.fillText("This text drawn by a plugin", 100, 100);
+  afterDraw: (c) => {
+        //var chartHeight = c.chart.height;
+        //var size = chartHeight * 2 / 100;
+        //c.scales['y-axis-0'].options.ticks.minor.fontSize = size;
     }
 }];
-class LineChart extends React.Component{
 
-  render() {
-
-    return (
-      <div>
-        <Line data={data} options={options}  />
-      </div>
-    );
-  }
+return (
+  <div>
+    <Line data={data} options={options} plugins = {plugins} />
+  </div>
+);
 }
 
-export default LineChart;
+export default LineChartTotal;

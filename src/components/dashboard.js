@@ -1,30 +1,31 @@
 import React from 'react';
-import LineChart from './lineChart'
+import LineChartTotal from './lineChartTotal.js';
+import LineChartDaily from './lineChartDaily.js';
 import '../App.scss'
 
-const Dashboard = ()=>{
+const Dashboard = ({data})=>{
   return(
     <div class="row my-5">
-      <div class="col-12">
+      <div class="col-12 col-md-6">
         <div class="card news-card">
-          <div class="card-body">
             <div class="container-fluid">
               <div class="row">
-                <div class="col-12 col-md-3">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-4 col-md-12">h</div>
-                      <div class="col-4 col-md-12">h</div>
-                      <div class="col-4 col-md-12">j</div>
-                    </div>
-                  </div> 
-                </div>
-                <div class="col-12 col-md-9">
-                  <LineChart /> 
+                <div class="col-12">
+                  <LineChartTotal dailyData = {data}/> 
                 </div>
               </div>
             </div>
-          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="card news-card">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-12">
+                  <LineChartDaily dailyData = {data}/> 
+                </div>
+              </div>
+            </div>
         </div>
       </div>
     </div>

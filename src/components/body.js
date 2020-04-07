@@ -12,7 +12,7 @@ const Body = ({state})=>{
   return(
     <Switch>
       <Route exact path='/'> <Landing state = {state}/> </Route>
-      <Route path='/dashboard'> <Dashboard/> </Route>
+      <Route path='/dashboard'> <Dashboard data = {state}/> </Route>
       <Route path="/vidNews">
         <Title/>
         <Stats stats={state.stats}/>
