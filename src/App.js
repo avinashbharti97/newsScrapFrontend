@@ -25,7 +25,9 @@ class App extends Component {
     },
     newsScrapeTime:0,
     loadingNews:true,
-    loadingStats:true
+    stateWise:[], 
+    loadingStats:true,
+    
   }
 
   async componentDidMount() {
@@ -43,8 +45,16 @@ class App extends Component {
                 DailyDeceasedNumbers:[...prevState.DailyDeceasedNumbers, obj.dailydeceased],
           }))
         });
-        this.setState(prevState=>({
-        }))
+        let stateWise = this.state.stateWise;
+        stateWise.push(data.statewise)
+        this.setState(
+          {stateWise:stateWise}     
+        )
+        this.state.stateWise.forEach(obj=>{
+          obj.forEach(s=>{
+            console.log(s.state)
+          })
+        })
         this.setState({
           stats:{
             cnf: data.statewise[0].confirmed,

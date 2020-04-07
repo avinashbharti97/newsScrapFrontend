@@ -7,7 +7,7 @@ const data = {
   //labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
   datasets: [{
       type: 'line',
-      label: 'confirmed',
+      label: 'cnf',
       data: [...dailyData.DailyConfirmedNumbers],
       fill: false,
       backgroundColor: '#101357',
@@ -17,7 +17,7 @@ const data = {
   },
   {
       type: 'line',
-      label: 'recovered',
+      label: 'rec',
       data: [...dailyData.DailyRecoveredNumbers],
       fill: false,
       backgroundColor: '#101357',
@@ -27,7 +27,7 @@ const data = {
     },
   {
       type: 'line',
-      label: 'deceased',
+      label: 'dec',
       data: [...dailyData.DailyDeceasedNumbers],
       fill: false,
       backgroundColor: '#101357',
