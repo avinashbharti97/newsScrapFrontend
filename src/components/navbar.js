@@ -8,19 +8,18 @@ const Navbar = ()=>{
   return(
     <div>
       <div class = "row mb-4 mt-5">
-        <div class="col-4 text-center">
+        <div class="col-6 text-center">
 
           <NavLink exact to="/" activeClassName="section-route-active" className = "section-route">
               <img src={textlogo} className="text-logo" alt="textlogo" />
           </NavLink>
         </div>
-        <div class="col-4 text-center">
+        <div class="col-6 text-center">
           <NavLink to="/vidNews" activeClassName="section-route-active" className = "section-route">
               <img src={videologo} className="video-logo" alt="videologo" />
-          </NavLink>
-        </div>
-        <div class="col-4 text-center">
-          {/* giving a bug of horizontal scroll */}
+            </NavLink>
+          </div>
+        {/*        <div class="col-4 text-center">
           <NavLink exact to="/bookmarks" activeClassName="section-route-active" className = "section-route">
             <svg height="8vmin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
                 <path
@@ -33,9 +32,9 @@ const Navbar = ()=>{
                 ></path>
             </svg>
           </NavLink>
-        </div>
+        </div>*/}
       </div>
-  </div>
+    </div>
       )
   }
 
