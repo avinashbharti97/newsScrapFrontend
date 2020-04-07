@@ -189,14 +189,43 @@
     display:inline
 }
 .state-cnf{
-    color:#900a17;
+    color:#c03e21;
     font-size:.6rem;
 }
 .state-rec{
-    color:#11481d;
+    color:#62a87c;
     font-size:.6rem;
 }
 .state-dec{
-    color:#878472;
+    color:#f3ae1e;
     font-size:.6rem;
+}
+.state-cnf-d{
+    font-size:.7rem;
+}
+.state-rec-d{
+    font-size:.7rem;
+}
+.state-dec-d{
+    font-size:.7rem;
+}
+.source-btn{
+    a:hover{
+        decoration: none;
+    }
+    a:link{
+        color:#a2b7cc;
+        decoration: none;
+    }
+    a:visited{
+        color:#a2b7cc;
+        decoration: none;
+    }
+    color:white;
+    font-size:.9rem;
+}
+@media (max-width: 480px) { 
+    .cum{
+        margin-bottom:15px;
+    }
 }

@@ -77,7 +77,7 @@ const options = {
       {
         ticks: {
             fontColor: "white",
-            fontSize: 8,
+            fontSize: 10,
             stepSize: 1000,
             beginAtZero: true
         },

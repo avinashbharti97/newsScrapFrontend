@@ -7,8 +7,8 @@ const Dashboard = ({data})=>{
   return(
     <React.Fragment>
     <div class="row my-5">
-      <div class="col-12 col-md-6">
-      <div class="col-12"><h5>Cumulative</h5></div>
+      <div class="col-12 col-md-6 cum">
+      <div class="col-12"><p>Cumulative</p></div>
         <div class="card news-card">
           <div class="container-fluid">
               <div class="row">
@@ -20,7 +20,7 @@ const Dashboard = ({data})=>{
         </div>
       </div>
       <div class="col-12 col-md-6">
-      <div class="col-12"><h5>Daily</h5></div>
+      <div class="col-12"><p>Daily</p></div>
         <div class="card news-card">
             <div class="container-fluid">
               <div class="row">
@@ -49,9 +49,9 @@ const Dashboard = ({data})=>{
                 s.map((x)=>(
                   <tr>
                     <td>{x.state}</td>
-                    <td><span class="inline state-cnf">+{x.deltaconfirmed}</span><span class="inline">{x.confirmed}</span></td>
-                    <td><span class="inline state-rec">+{x.deltarecovered}</span><span class="inline">{x.recovered}</span></td>
-                    <td><span class="inline state-dec">+{x.deltadeceased}</span><span class="inline">{x.deaths}</span></td>
+                    <td><span class="inline state-cnf">+{x.deltaconfirmed}</span><span class="inline state-cnf-d">{x.confirmed}</span></td>
+                    <td><span class="inline state-rec">+{x.deltarecovered}</span><span class="inline state-rec-d">{x.recovered}</span></td>
+                    <td><span class="inline state-dec">+{x.deltadeaths}</span><span class="inline state-dec-d">{x.deaths}</span></td>
                   </tr>
                 ))
               ))}
@@ -59,8 +59,8 @@ const Dashboard = ({data})=>{
           </table>
         </div>
       </div>
-      <center>source: <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSc_2y5N0I67wDU38DjDh35IZSIS30rQf7_NYZhtYYGU1jJYT6_kDx4YpF-qw0LSlGsBYP8pqM_a1Pd/pubhtml"> crowdsourced patient database</a></center>
     </div>
+      <div class="mx-auto btn btn-dark float-center source-btn"><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSc_2y5N0I67wDU38DjDh35IZSIS30rQf7_NYZhtYYGU1jJYT6_kDx4YpF-qw0LSlGsBYP8pqM_a1Pd/pubhtml"> crowdsourced patient database</a></div>
   </React.Fragment>
   )
 }
