@@ -1,3 +1,4 @@
-/* /index.html 200
 # Redirect default Netlify subdomain to primary domain
-https://covidenews.netlify.com/* https://www.covidnews.media/:splat 301!
+https://covidnews.netlify.com https://covidnews.media 301!
+https://covidenews.netlify.com/* https://covidnews.media/:splat 301!
+/* /index.html 200
