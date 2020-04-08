@@ -49,9 +49,24 @@ const Dashboard = ({data})=>{
                 s.map((x)=>(
                   <tr>
                     <td>{x.state}</td>
-                    <td><span class="inline state-cnf">+{x.deltaconfirmed}</span><span class="inline state-cnf-d">{x.confirmed}</span></td>
-                    <td><span class="inline state-rec">+{x.deltarecovered}</span><span class="inline state-rec-d">{x.recovered}</span></td>
-                    <td><span class="inline state-dec">+{x.deltadeaths}</span><span class="inline state-dec-d">{x.deaths}</span></td>
+                    <td>
+                      <span class="inline state-cnf-d">{x.confirmed}</span>
+                      {x.deltaconfirmed!=0?
+                          <span class="inline state-cnf">[+{x.deltaconfirmed}]</span>
+                          : <span></span>}
+                  </td>
+                  <td>
+                    <span class="inline state-rec-d">{x.recovered}</span>
+                      {x.deltarecovered!=0?
+                          <span class="inline state-rec">[+{x.deltarecovered}]</span>
+                          : <span></span>}
+                  </td>
+                  <td>
+                    <span class="inline state-dec-d">{x.deaths}</span>
+                      {x.deltadeaths!=0?
+                          <span class="inline state-dec">[+{x.deltadeaths}]</span>
+                          : <span></span>}
+                  </td>
                   </tr>
                 ))
               ))}
