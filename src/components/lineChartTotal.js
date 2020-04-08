@@ -9,31 +9,37 @@ const data = {
       type: 'line',
       label: 'cnf',
       data: [...dailyData.TotalConfirmedNumbers],
+      pointRadius:0,
       fill: false,
       backgroundColor: '#101357',
       borderColor: '#fbaf08',
       hoverBackgroundColor: '#101357',
-      hoverBorderColor: '#71B37C',
+    hoverBorderColor: '#71B37C',
+    pointStyle:'line'
   },
   {
       type: 'line',
       label: 'rec',
       data: [...dailyData.TotalRecoveredNumbers],
+      pointRadius:0,
       fill: false,
       backgroundColor: '#101357',
       borderColor: '#62A87C',
       hoverBackgroundColor: '#101357',
       hoverBorderColor: '#71B37C',
+    pointStyle:'line'
     },
   {
       type: 'line',
       label: 'dec',
       data: [...dailyData.TotalDeceasedNumbers],
+      pointRadius:0,
       fill: false,
       backgroundColor: '#101357',
       borderColor: '#BF0603',
       hoverBackgroundColor: '#101357',
       hoverBorderColor: '#71B37C',
+    pointStyle:'line'
     }
   ]
 };
@@ -51,8 +57,9 @@ const options = {
   legend:{
     labels:{
       fontColor: "white",
+      usePointStyle: true,
       fornSize: 8,
-      boxWidth: 20
+      //boxWidth: 20
     }
   },
   scales: {
