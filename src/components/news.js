@@ -30,7 +30,7 @@ const News = ({news})=>{
                         </div>
                         <div class="col-6">
                           <div class="float-right">
-                            <WhatsappShareButton url={ "\r\n"+"👉"+s.url+ "\r\n\r\n" +" ✔"+"  ```Read more covid-19 short news at :``` *https://covidnews.netlify.com* "} title={"👉"+s.title}>
+                            <WhatsappShareButton url={ "\r\n"+"👉"+s.url+ "\r\n\r\n" +" ✔"+"  ```Read more covid-19 short news at :``` *https://covidnews.media* "} title={"👉"+s.title}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="40"
