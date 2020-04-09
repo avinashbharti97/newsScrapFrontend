@@ -70,7 +70,8 @@ class App extends Component {
         })
       })
       .catch(console.log)
-    await fetch('https://avinashbharti97-newsscrap.glitch.me/news')
+    //await fetch('https://avinashbharti97-newsscrap.glitch.me/news')
+    await fetch('https://api.jsonbin.io/b/5e8ecc638e85c8437012fd64/latest')
     //const proxyurl = "https://cors-anywhere.herokuapp.com/";
     //const options = {
       //method: 'GET',
