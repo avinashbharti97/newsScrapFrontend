@@ -4,10 +4,10 @@ import Body from './components/body';
 import ReactGA from 'react-ga';
 
 const trackingId = "UA-163239506-1"; // Replace with your Google Analytics tracking ID
-function initializeReactGA(){
-  ReactGA.initialize(trackingId);
-  ReactGA.pageview('/');
-}
+//function initializeReactGA(){
+  //ReactGA.initialize(trackingId);
+  //ReactGA.pageview(window.location.pathname + window.location.search);
+//}
 
 
 class App extends Component {
@@ -39,6 +39,9 @@ class App extends Component {
   }
 
   async componentDidMount() {
+    
+  ReactGA.initialize(trackingId);
+  ReactGA.pageview(window.location.pathname + window.location.search);
 
     await fetch('https://api.covid19india.org/data.json')
       .then(res=> res.json()).then((data)=>{
