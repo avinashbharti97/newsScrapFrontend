@@ -1,6 +1,14 @@
 import React, {Component} from 'react';
 import Nav from './components/nav';
 import Body from './components/body';
+import ReactGA from 'react-ga';
+
+const trackingId = "UA-163239506-1"; // Replace with your Google Analytics tracking ID
+function initializeReactGA(){
+  ReactGA.initialize(trackingId);
+  ReactGA.pageview('/');
+}
+
 
 class App extends Component {
   state = {

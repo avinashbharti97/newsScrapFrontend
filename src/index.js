@@ -4,6 +4,14 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+//import { createBrowserHistory } from 'history';
+
+//const history = createBrowserHistory();
+
+//history.listen(location => {
+  //ReactGA.set({ page: location.pathname }); // Update the user's current page
+  //ReactGA.pageview(location.pathname); // Record a pageview for the given page
+//});
 
 ReactDOM.render(
   <React.StrictMode>
