@@ -51,19 +51,19 @@ const Dashboard = ({data})=>{
                     <td>{x.state}</td>
                     <td>
                       <span class="inline state-cnf-d">{x.confirmed}</span>
-                      {x.deltaconfirmed!=0?
+                      {x.deltaconfirmed!==0?
                           <span class="inline state-cnf">[+{x.deltaconfirmed}]</span>
                           : <span></span>}
                   </td>
                   <td>
                     <span class="inline state-rec-d">{x.recovered}</span>
-                      {x.deltarecovered!=0?
+                      {x.deltarecovered!==0?
                           <span class="inline state-rec">[+{x.deltarecovered}]</span>
                           : <span></span>}
                   </td>
                   <td>
                     <span class="inline state-dec-d">{x.deaths}</span>
-                      {x.deltadeaths!=0?
+                      {x.deltadeaths!==0?
                           <span class="inline state-dec">[+{x.deltadeaths}]</span>
                           : <span></span>}
                   </td>

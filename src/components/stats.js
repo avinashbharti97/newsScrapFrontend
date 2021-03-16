@@ -5,6 +5,10 @@ import arrow from '../svg/Arrow.svg'
 
 const Stats = ({stats})=>{
   return(
+    <>
+    <div class="alert alert-warning" role="alert">
+      Service has been terminated &#128148; 
+    </div>
     <NavLink style = {{textDecoration:'none'}}to="/dashboard">
       <div class="row ">
         <div class="col-3 text-center cnf">
@@ -42,6 +46,7 @@ const Stats = ({stats})=>{
         </div>
       </div>
     </NavLink>
+    </>
   )
 }     
 export default Stats 
